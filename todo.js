@@ -8,7 +8,12 @@ function submitHandler() {
 	console.log(newTask);
 
 	if (newTask != null || newTask != "") {
-		taskList.push(newTask);
+		const taskObj = {
+			id: 1,
+			name: newTask,
+		};
+
+		taskList.push(taskObj);
 	} else {
 		alert("Invalid Data");
 	}
@@ -25,7 +30,7 @@ function listTasks() {
 	for (i = 0; i < len; i++) {
 		taskList[i];
 		let task = taskList[i];
-		let li = `<li class = list-group-item>${task}</li>`;
+		let li = `<li class = list-group-item>${task.name}</li>`;
 		taskHTML += li;
 	}
 	console.log(taskHTML);
